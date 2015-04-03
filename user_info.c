@@ -1,30 +1,31 @@
 #include <stdio.h>
 
 struct user {
-    char first_name[10];
-    char last_name[10];
+    int age;
+    int birthdate;
 } user1;
 
-void swap_names(char *, char *);
+void swap_nums(int *, int *);
 
 int main(void)
 {
-    printf("Please enter your first name: ");
-    scanf(" %s", &user1.first_name);
-    printf("Please enter your last name: ");
-    scanf(" %s", &user1.last_name);
+    printf("Please enter your age: ");
+    scanf(" %d", &user1.age);
+    printf("Please enter the day of the month you were born : ");
+    scanf(" %d", &user1.birthdate);
     printf("Ok, let's swap them.\n");
 
-    swap_names(&user1.first_name, user1.last_name);
+    swap_nums(&user1.age, &user1.birthdate);
 
-    printf("Now your name is %s %s.\n", user1.first_name, user1.last_name);
+    printf("Your age is %d and the date you were born is %d.\n",
+            user1.age, user1.birthdate);
     return 0;
 }
 
-void swap_names(char *first, char *last)
+void swap_nums(int *num1, int *num2)
 {
-    char temp[10];
-    temp = *first;
-    *first = *last;
-    *last = temp;
+    int temp;
+    temp = *num1;
+    *num1 = *num2;
+    *num2 = temp;
 }
