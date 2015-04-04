@@ -6,12 +6,16 @@ typedef struct {
 } User;
 
 void swap_nums(int *, int *);
+void User_add_age(User *, int);
 
 int main(void)
 {
     User user1;
+    int input_age;
+
     printf("Please enter your age: ");
-    scanf(" %d", &user1.age);
+    scanf(" %d", &input_age);
+    User_add_age(&user1, input_age);
     printf("Please enter the day of the month you were born : ");
     scanf(" %d", &user1.birthdate);
     printf("Ok, let's swap them.\n");
@@ -29,4 +33,9 @@ void swap_nums(int *num1, int *num2)
     temp = *num1;
     *num1 = *num2;
     *num2 = temp;
+}
+
+void User_add_age(User *user, int age)
+{
+    user->age = age;
 }
