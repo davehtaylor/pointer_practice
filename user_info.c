@@ -1,14 +1,15 @@
 #include <stdio.h>
 
-struct user {
+typedef struct {
     int age;
     int birthdate;
-} user1;
+} User;
 
 void swap_nums(int *, int *);
 
 int main(void)
 {
+    User user1;
     printf("Please enter your age: ");
     scanf(" %d", &user1.age);
     printf("Please enter the day of the month you were born : ");
