@@ -8,6 +8,8 @@ typedef struct {
 void swap_nums(int *, int *);
 void User_add_age(User *, int);
 void User_add_birthdate(User *, int);
+int User_get_age(User *);
+int User_get_birthdate(User *);
 
 int main(void)
 {
@@ -26,7 +28,7 @@ int main(void)
     swap_nums(&user1.age, &user1.birthdate);
 
     printf("Your age is %d and the date you were born is %d.\n",
-            user1.age, user1.birthdate);
+            User_get_age(&user1), User_get_birthdate(&user1));
     return 0;
 }
 
@@ -46,4 +48,16 @@ void User_add_age(User *user, int age)
 void User_add_birthdate(User *user, int birthdate)
 {
     user->birthdate = birthdate;
+}
+
+int User_get_age(User *user)
+{
+    int age = user->age;
+    return age;
+}
+
+int User_get_birthdate(User *user)
+{
+    int birthdate = user->birthdate;
+    return birthdate;
 }
