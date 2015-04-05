@@ -15,15 +15,14 @@ void User_swap_vals(User *);
 int main(void)
 {
     User user1;
-    int input_age;
-    int input_birthdate;
+    int temp;
 
     printf("Please enter your age: ");
-    scanf(" %d", &input_age);
-    User_set_age(&user1, input_age);
+    scanf(" %d", &temp);
+    User_set_age(&user1, temp);
     printf("Please enter the day of the month you were born: ");
-    scanf(" %d", &input_birthdate);
-    User_set_birthdate(&user1, input_birthdate);
+    scanf(" %d", &temp);
+    User_set_birthdate(&user1, temp);
     printf("Ok, let's swap them.\n");
 
     User_swap_vals(&user1);
@@ -63,5 +62,5 @@ int User_get_birthdate(User *user)
 
 void User_swap_vals(User *user)
 {
-    swap_nums(user->age, user->birthdate);
+    swap_nums(&user.age, &user.birthdate);
 }
