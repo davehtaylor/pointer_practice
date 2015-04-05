@@ -40,7 +40,7 @@ void swap_nums(int *num1, int *num2)
     *num2 = temp;
 }
 
-void User_set_add(User *user, int age)
+void User_set_age(User *user, int age)
 {
     user->age = age;
 }
@@ -62,5 +62,5 @@ int User_get_birthdate(User *user)
 
 void User_swap_vals(User *user)
 {
-    swap_nums(&user.age, &user.birthdate);
+    swap_nums(&user->age, &user->birthdate);
 }
