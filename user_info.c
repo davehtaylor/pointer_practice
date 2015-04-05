@@ -20,11 +20,12 @@ int main(void)
     printf("Please enter your age: ");
     scanf(" %d", &temp);
     User_set_age(&user1, temp);
+
     printf("Please enter the day of the month you were born: ");
     scanf(" %d", &temp);
     User_set_birthdate(&user1, temp);
-    printf("Ok, let's swap them.\n");
 
+    printf("Ok, let's swap them.\n");
     User_swap_vals(&user1);
 
     printf("Your age is %d and the date you were born is %d.\n",
