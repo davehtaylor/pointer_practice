@@ -5,34 +5,6 @@ typedef struct {
     int birthdate;
 } User;
 
-void swap_nums(int *, int *);
-void User_set_age(User *, int);
-void User_set_birthdate(User *, int);
-int User_get_age(User *);
-int User_get_birthdate(User *);
-void User_swap_vals(User *);
-
-int main(void)
-{
-    User user1;
-    int temp;
-
-    printf("Please enter your age: ");
-    scanf(" %d", &temp);
-    User_set_age(&user1, temp);
-
-    printf("Please enter the day of the month you were born: ");
-    scanf(" %d", &temp);
-    User_set_birthdate(&user1, temp);
-
-    printf("Ok, let's swap them.\n");
-    User_swap_vals(&user1);
-
-    printf("Your age is %d and the date you were born is %d.\n",
-            User_get_age(&user1), User_get_birthdate(&user1));
-    return 0;
-}
-
 void swap_nums(int *num1, int *num2)
 {
     int temp;
@@ -64,4 +36,26 @@ int User_get_birthdate(User *user)
 void User_swap_vals(User *user)
 {
     swap_nums(&user->age, &user->birthdate);
+}
+
+int main(void)
+{
+    User user1;
+    int temp;
+
+    printf("Please enter your age: ");
+    scanf(" %d", &temp);
+    User_set_age(&user1, temp);
+
+    printf("Please enter the day of the month you were born: ");
+    scanf(" %d", &temp);
+    User_set_birthdate(&user1, temp);
+
+    printf("Ok, let's swap them.\n");
+    User_swap_vals(&user1);
+
+    printf("Your age is %d and the date you were born is %d.\n",
+            User_get_age(&user1), User_get_birthdate(&user1));
+
+    return 0;
 }
