@@ -6,7 +6,7 @@ typedef struct {
     int age;
 } User;
 
-double User_get_birthdate(User *user)
+time_t User_get_birthdate(User *user)
 {
     return user->birthdate;
 }
