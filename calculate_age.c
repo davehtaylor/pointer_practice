@@ -1,16 +1,26 @@
+/* This program takes in the user's birthdate. It converts it to epoch time
+ * and stores it in a struct. Then, and function will be called to calculate
+ * the user's age based on that birthdate. */
+
 #include <stdio.h>
 #include <time.h>
 
+/* Define a struct for the user called User.  */
 typedef struct {
     time_t birthdate;
 } User;
 
-time_t User_get_birthdate(User *user)
+/* Get birthdate from the struct. Take in the instantiated struct name.  */
+time_t 
+User_get_birthdate(User *user)
 {
     return user->birthdate;
 }
 
-void User_set_birthdate(User *user, int mm, int dd, int yyyy)
+/* Set birthdate in the struct. Take in the instantiated struct name,
+ * and the month, day and year that the user has entered.  */
+void
+User_set_birthdate(User *user, int mm, int dd, int yyyy)
 {
     struct tm time_info;
     time_t epoch_time;
@@ -27,7 +37,9 @@ void User_set_birthdate(User *user, int mm, int dd, int yyyy)
     user->birthdate = epoch_time;
 }
 
-int calculate_age(time_t birthdate)
+/* Take the birthdate and use it to calculate the user's age.  */
+int 
+calculate_age(time_t birthdate)
 {
     time_t now = time(NULL); 
     time_t difference_in_time = now - birthdate;
@@ -36,7 +48,12 @@ int calculate_age(time_t birthdate)
     return age;
 }
 
-int main(void)
+/* Instantiate the User struct and declare variables for the month, day
+ * and year that the user will enter. Ask the user for that information,
+ * set the birthdate, grab the birthdate from the struct and use that to
+ * calculate the user's age. Then return that age to the user.  */
+int 
+main(void)
 {
     User user1;
     int mm, dd, yyyy;
