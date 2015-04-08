@@ -18,7 +18,9 @@ User_get_birthdate(User *user)
 }
 
 /* Set birthdate in the struct. Take in the instantiated struct name,
- * and the month, day and year that the user has entered.  */
+ * and the month, day and year that the user has entered. Using that
+ * month, day and year, convert it to epoch time and set that as the
+ * birthdate.  */
 void
 User_set_birthdate(User *user, int mm, int dd, int yyyy)
 {
@@ -37,7 +39,9 @@ User_set_birthdate(User *user, int mm, int dd, int yyyy)
     user->birthdate = epoch_time;
 }
 
-/* Take the birthdate and use it to calculate the user's age.  */
+/* Take the birthdate and use it to calculate the user's age. Find
+ * the difference between now and birthdate, and then divide that 
+ * difference by 60*60*24*365 (which is 31536000) to get the years.  */
 int 
 calculate_age(time_t birthdate)
 {
