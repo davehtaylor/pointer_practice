@@ -5,7 +5,8 @@ typedef struct {
     int birthdate;
 } User;
 
-void swap_nums(int *num1, int *num2)
+void 
+swap_nums(int *num1, int *num2)
 {
     int temp;
     temp = *num1;
@@ -13,32 +14,38 @@ void swap_nums(int *num1, int *num2)
     *num2 = temp;
 }
 
-void User_set_age(User *user, int age)
+void 
+User_set_age(User *user, int age)
 {
     user->age = age;
 }
 
-void User_set_birthdate(User *user, int birthdate)
+void 
+User_set_birthdate(User *user, int birthdate)
 {
     user->birthdate = birthdate;
 }
 
-int User_get_age(User *user)
+int 
+User_get_age(User *user)
 {
     return user->age;
 }
 
-int User_get_birthdate(User *user)
+int 
+User_get_birthdate(User *user)
 {
     return user->birthdate;
 }
 
-void User_swap_vals(User *user)
+void 
+User_swap_vals(User *user)
 {
     swap_nums(&user->age, &user->birthdate);
 }
 
-int main(void)
+int 
+main(void)
 {
     User user1;
     int temp;
